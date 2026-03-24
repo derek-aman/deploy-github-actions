@@ -51,6 +51,10 @@ app.get("/health", (req, res) => {
   res.send("OK");
 });
 
+app.get("/test", (req, res) => {
+  res.send("NEW VERSION v2 🚀");
+});
+
 // ---------------- SERVER ----------------
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
