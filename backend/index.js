@@ -58,6 +58,10 @@ app.get("/test2", (req, res) => {
   res.send("NEW VERSION v3 ");
 });
 
+app.get("/derek", (req, res) => {
+  res.send("AMAN KUMAR THE GENIUS !! ");
+});
+
 // ---------------- SERVER ----------------
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
