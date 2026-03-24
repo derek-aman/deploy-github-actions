@@ -54,6 +54,9 @@ app.get("/health", (req, res) => {
 app.get("/test", (req, res) => {
   res.send("NEW VERSION v2 🚀");
 });
+app.get("/test2", (req, res) => {
+  res.send("NEW VERSION v3 ");
+});
 
 // ---------------- SERVER ----------------
 const PORT = process.env.PORT || 5000;
