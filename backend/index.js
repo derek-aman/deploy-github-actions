@@ -58,7 +58,7 @@ app.get("/test2", (req, res) => {
   res.send("NEW VERSION v3 ");
 });
 
-app.get("/derek", (req, res) => {
+app.get("/aman", (req, res) => {
   res.send("AMAN KUMAR THE GENIUS !! ");
 });
 
