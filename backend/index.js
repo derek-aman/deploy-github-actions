@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const path = require("path");
 const { MongoClient } = require("mongodb");
-
+require("dotenv").config();
 const app = express();
 
 app.use(express.json());
@@ -10,8 +10,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
 // ---------------- MONGO CONFIG ----------------
-const MONGO_URL =
-  "mongodb://aman_admin:aman_password@localhost:27017/?authSource=admin";
+const MONGO_URL =process.env.MONGO_URI;
+  // "mongodb://aman_admin:aman_password@localhost:27017/?authSource=admin";
 
 const client = new MongoClient(MONGO_URL);
 let db;
@@ -47,8 +47,13 @@ app.get("/getUsers", async (req, res) => {
   }
 });
 
+app.get("/health", (req, res) => {
+  res.send("OK");
+});
+
 // ---------------- SERVER ----------------
-app.listen(5000, () => {
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
   console.log("🚀 Server running on http://localhost:5000");
 });
 
